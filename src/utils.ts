@@ -23,12 +23,6 @@ export function onlyRootDomain(
 export function onlyDomain(request: Request): Response | undefined {
   const url = new URL(request.url);
 
-  console.log(
-    REDIRECT_DOMAINS.includes(url.hostname),
-    url.hostname,
-    REDIRECT_DOMAINS
-  );
-
   if (REDIRECT_DOMAINS.includes(url.hostname)) {
     url.hostname = ROOT_DOMAIN;
 
