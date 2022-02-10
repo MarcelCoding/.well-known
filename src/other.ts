@@ -27,6 +27,7 @@ export async function robotsTxt(request: Request): Promise<Response | undefined>
 export function securityTxt(): Response {
   return new Response(
     `Contact: mailto:security@${ROOT_DOMAIN}
+Encryption: https://${ROOT_DOMAIN}/0xFAA965D4
 Expires: 2023-12-31T23:59:59.999Z
 Preferred-Languages: en, de
 Canonical: https://${ROOT_DOMAIN}/.well-known/security.txt`,
