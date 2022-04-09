@@ -1,5 +1,5 @@
-import { REDIRECT_DOMAINS, ROBOTS_EXCLUDE, ROOT_DOMAIN } from "./index";
-import { ACCESS_CONTROL_ALLOW_ORIGIN, ASTERISK, CONTENT_TYPE, TEXT_PLAIN } from "./headers";
+import {REDIRECT_DOMAINS, ROBOTS_EXCLUDE, ROOT_DOMAIN} from "./config";
+import {ACCESS_CONTROL_ALLOW_ORIGIN, ASTERISK, CONTENT_TYPE, TEXT_PLAIN} from "./headers";
 
 export async function robotsTxt(request: Request): Promise<Response | undefined> {
   const url = new URL(request.url);
