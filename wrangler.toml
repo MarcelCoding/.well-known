@@ -8,9 +8,6 @@ routes = [
     "www.m4rc3l.de/*"
 ]
 
-# "*marcelcoding.ml/*",
-# "*marcelcoding.tk/*"
-
 zone_id = "b820a9fe742f410d3dfb40cc398c7577"
 account_id = "2a09613716e511a8fe8ca74abc084762"
 workers_dev = false

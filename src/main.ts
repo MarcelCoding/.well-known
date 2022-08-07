@@ -1,12 +1,13 @@
 import {Router} from "itty-router";
 import {robotsTxt, securityTxt} from "./other";
-import {onlyDomain, redirectRootDomain} from "./utils";
+import {onlyDomain, onlyRootDomain, redirectRootDomain} from "./utils";
+import {matrixClient, matrixServer} from "./matrix";
 
 const router = Router()
   .get("/robots.txt", robotsTxt, redirectRootDomain)
   .get("/.well-known/security.txt", redirectRootDomain, securityTxt)
-  // .get("/.well-known/matrix/client", onlyDomain, onlyRootDomain, matrixClient)
-  // .get("/.well-known/matrix/server", onlyDomain, onlyRootDomain, matrixServer)
+  .get("/.well-known/matrix/client", onlyDomain, onlyRootDomain, matrixClient)
+  .get("/.well-known/matrix/server", onlyDomain, onlyRootDomain, matrixServer)
   .all("*", onlyDomain, fetch);
 
 addEventListener("fetch", (event: FetchEvent) =>

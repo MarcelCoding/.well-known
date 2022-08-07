@@ -4,7 +4,7 @@ import {queryDns} from "./utils";
 
 export function matrixClient(): Response {
   return new Response(
-    `{"m.homeserver":{"base_url":"${MATRIX_CLIENT}"},"m.identity_server":{"base_url":"https://vector.im"}}`,
+    `{"m.homeserver":{"base_url":"${MATRIX_CLIENT}"}}`,
     {
       headers: {
         [CONTENT_TYPE]: APPLICATION_JSON,
